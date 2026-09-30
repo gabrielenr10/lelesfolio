@@ -1,5 +1,8 @@
 ---
 import { navigation } from '../data/navigation'
+
+const isHome = Astro.url.pathname === '/'
+const isProject = Astro.url.pathname.startsWith('/projects/')
 ---
 
 <header
@@ -15,7 +18,10 @@ import { navigation } from '../data/navigation'
       {navigation.map((link) => (
         <li class="flex-1 text-center md:w-28 md:flex-none">
           <a
-            href={link.href}
+            href={isHome ? link.href : `/${link.href}`}
+            aria-current={
+              isProject && link.href === '#projects' ? 'true' : undefined
+            }
             class="block w-full rounded-full px-2 py-2.5 text-center text-xs font-medium text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-neutral-950 focus-visible:outline-2 focus-visible:outline-offset-2 aria-[current=true]:bg-neutral-100 aria-[current=true]:font-semibold aria-[current=true]:text-neutral-950 md:py-1.5 md:text-sm md:hover:bg-transparent md:hover:aria-[current=true]:bg-neutral-100"
           >
             {link.label}

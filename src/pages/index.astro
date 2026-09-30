@@ -3,10 +3,12 @@ import '../styles/global.css'
 import BaseLayout from '@layouts/BaseLayout.astro'
 import Hero from '@components/Hero.astro'
 import ExperienceSection from '@components/ExperienceSection.astro'
+import ProjectsSection from '@components/ProjectsSection.astro'
 import EducationSection from '@components/EducationSection.astro'
 import SkillsSection from '@components/SkillsSection.astro'
 import { profile } from '../data/profile'
 import { experience } from '../data/experience'
+import { projects } from '../data/projects'
 import { education } from '../data/education'
 import { skills } from '../data/skills'
 ---
@@ -14,6 +16,7 @@ import { skills } from '../data/skills'
 <BaseLayout>
   <Hero profile={profile} />
   <ExperienceSection items={experience} />
+  <ProjectsSection items={projects} />
   <EducationSection items={education} />
   <SkillsSection groups={skills} />
 </BaseLayout>
