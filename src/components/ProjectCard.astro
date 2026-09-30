@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import type { Project } from '../data/projects'
 
 interface Props {
@@ -45,11 +46,13 @@ const { project } = Astro.props
   </p>
   <div class="mt-6 grid gap-4 sm:mt-8 sm:grid-cols-2">
     {project.images.map((image) => (
-      <img
+      <Image
         src={image.src}
         alt={image.alt}
-        width="800"
-        height="600"
+        width={800}
+        widths={[400, 800]}
+        sizes="(min-width: 640px) 400px, calc(100vw - 74px)"
+        format="webp"
         loading="lazy"
         decoding="async"
         class="aspect-4/3 w-full rounded-2xl border border-neutral-200 bg-neutral-100 object-contain"

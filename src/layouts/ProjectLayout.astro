@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import BaseLayout from '@layouts/BaseLayout.astro'
 import type { Project } from '../data/projects'
 
@@ -48,16 +49,22 @@ const formatDate = (date: string) =>
               Dates
             </dt>
             <dd class="mt-2 text-sm text-neutral-900 sm:text-base">
-              <time datetime={project.startDate}>
-                {formatDate(project.startDate)}
-              </time>
-              <span> — </span>
-              {project.endDate ? (
-                <time datetime={project.endDate}>
-                  {formatDate(project.endDate)}
-                </time>
+              {project.startDate ? (
+                <>
+                  <time datetime={project.startDate}>
+                    {formatDate(project.startDate)}
+                  </time>
+                  <span> — </span>
+                  {project.endDate ? (
+                    <time datetime={project.endDate}>
+                      {formatDate(project.endDate)}
+                    </time>
+                  ) : (
+                    <span>Present</span>
+                  )}
+                </>
               ) : (
-                <span>Present</span>
+                <span>Dates to be added.</span>
               )}
             </dd>
           </div>
@@ -94,11 +101,13 @@ const formatDate = (date: string) =>
         <div class="mt-6 grid gap-6 sm:gap-8">
           {project.images.map((image) => (
             <div class="overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-[0_12px_40px_-12px_rgb(0_0_0_/_0.14)]">
-              <img
+              <Image
                 src={image.src}
                 alt={image.alt}
-                width="800"
-                height="600"
+                width={1200}
+                widths={[600, 900, 1200]}
+                sizes="(min-width: 896px) 864px, calc(100vw - 32px)"
+                format="webp"
                 loading="lazy"
                 decoding="async"
                 class="h-auto w-full"
