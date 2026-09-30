@@ -1,0 +1,121 @@
+---
+import { Image } from 'astro:assets'
+import BaseLayout from '@layouts/BaseLayout.astro'
+import type { Project } from '../data/projects'
+
+interface Props {
+  project: Project
+}
+
+const { project } = Astro.props
+const formatDate = (date: string) =>
+  new Intl.DateTimeFormat('en', {
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  }).format(new Date(`${date}-01T00:00:00Z`))
+---
+
+<BaseLayout
+  title={`${project.title} — Ángeles Bocharán`}
+  description={project.description}
+>
+  <article aria-labelledby="project-title" class="bg-neutral-50">
+    <div class="mx-auto max-w-4xl px-4 py-12 sm:py-16">
+      <a
+        href="/#projects"
+        class="inline-flex items-center gap-2 text-sm font-medium text-neutral-600 transition-colors hover:text-neutral-950"
+      >
+        <span aria-hidden="true">←</span> Back to projects
+      </a>
+
+      <header class="mt-8 rounded-3xl border border-neutral-200 bg-white p-5 shadow-[0_12px_40px_-12px_rgb(0_0_0_/_0.14)] sm:p-8">
+        <p class="text-xs font-semibold uppercase tracking-widest text-neutral-500">
+          Project details
+        </p>
+        <h1
+          id="project-title"
+          class="mt-2 text-3xl font-bold tracking-tight sm:text-5xl"
+        >
+          {project.title}
+        </h1>
+        <p class="mt-4 max-w-prose text-base leading-relaxed text-neutral-600 sm:text-lg">
+          {project.description}
+        </p>
+
+        <dl class="mt-8 grid gap-6 border-t border-neutral-100 pt-6 sm:grid-cols-2">
+          <div>
+            <dt class="text-xs font-semibold uppercase tracking-widest text-neutral-500">
+              Dates
+            </dt>
+            <dd class="mt-2 text-sm text-neutral-900 sm:text-base">
+              {project.startDate ? (
+                <>
+                  <time datetime={project.startDate}>
+                    {formatDate(project.startDate)}
+                  </time>
+                  <span> — </span>
+                  {project.endDate ? (
+                    <time datetime={project.endDate}>
+                      {formatDate(project.endDate)}
+                    </time>
+                  ) : (
+                    <span>Present</span>
+                  )}
+                </>
+              ) : (
+                <span>Dates to be added.</span>
+              )}
+            </dd>
+          </div>
+          <div>
+            <dt class="text-xs font-semibold uppercase tracking-widest text-neutral-500">
+              My role
+            </dt>
+            <dd class="mt-2 text-sm text-neutral-900 sm:text-base">
+              {project.role}
+            </dd>
+          </div>
+        </dl>
+
+        {project.websiteUrl && (
+          <a
+            href={project.websiteUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Visit ${project.title} website (opens in a new tab)`}
+            class="mt-8 inline-flex items-center gap-2 rounded-full border border-neutral-300 px-6 py-2.5 text-sm font-medium text-neutral-900 transition-colors hover:border-neutral-900 hover:bg-neutral-100"
+          >
+            Visit website <span aria-hidden="true">↗</span>
+          </a>
+        )}
+      </header>
+
+      <section aria-labelledby="showcase-title" class="mt-10 sm:mt-12">
+        <h2
+          id="showcase-title"
+          class="text-xl font-semibold tracking-tight sm:text-2xl"
+        >
+          Project showcase
+        </h2>
+        <div class="mt-6 grid gap-6 sm:gap-8">
+          {project.images.map((image) => (
+            <div class="overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-[0_12px_40px_-12px_rgb(0_0_0_/_0.14)]">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                width={1200}
+                widths={[600, 900, 1200]}
+                sizes="(min-width: 896px) 864px, calc(100vw - 32px)"
+                format="webp"
+                loading="lazy"
+                decoding="async"
+                class="h-auto w-full"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  </article>
+</BaseLayout>

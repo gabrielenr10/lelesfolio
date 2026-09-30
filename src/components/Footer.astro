@@ -6,6 +6,8 @@ import GitHubIcon from './icons/GitHubIcon.astro'
 import GmailIcon from './icons/GmailIcon.astro'
 import LinkedInIcon from './icons/LinkedInIcon.astro'
 
+const isHome = Astro.url.pathname === '/'
+
 const icons = {
   GitHub: GitHubIcon,
   LinkedIn: LinkedInIcon,
@@ -27,7 +29,7 @@ const footerSocials = socials.filter(
         {navigation.map((link) => (
           <li>
             <a
-              href={link.href}
+              href={isHome ? link.href : `/${link.href}`}
               class="text-sm text-neutral-600 transition-colors hover:text-neutral-950"
             >
               {link.label}
@@ -63,7 +65,10 @@ const footerSocials = socials.filter(
   <p class="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 px-4 pb-6 text-center text-xs text-neutral-500">
     <span>© {new Date().getFullYear()} Ángeles Bocharán</span>
     <span aria-hidden="true">·</span>
-    <a href="#home" class="transition-colors hover:text-neutral-950">
+    <a
+      href={isHome ? '#home' : '/#home'}
+      class="transition-colors hover:text-neutral-950"
+    >
       Back to top ↑
     </a>
   </p>

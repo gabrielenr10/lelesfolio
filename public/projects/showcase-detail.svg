@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#ededed"/>
+  <rect x="280" y="58" width="240" height="424" rx="32" fill="#fff" stroke="#d4d4d4" stroke-width="2"/>
+  <rect x="360" y="74" width="80" height="8" rx="4" fill="#d4d4d4"/>
+  <rect x="306" y="112" width="128" height="14" rx="7" fill="#a3a3a3"/>
+  <rect x="306" y="143" width="188" height="132" rx="16" fill="#f5f5f5"/>
+  <circle cx="400" cy="209" r="34" fill="#e5e5e5"/>
+  <rect x="306" y="298" width="156" height="10" rx="5" fill="#a3a3a3"/>
+  <rect x="306" y="320" width="188" height="8" rx="4" fill="#e5e5e5"/>
+  <rect x="306" y="338" width="162" height="8" rx="4" fill="#e5e5e5"/>
+  <rect x="306" y="380" width="188" height="40" rx="20" fill="#262626"/>
+  <rect x="364" y="457" width="72" height="5" rx="2.5" fill="#d4d4d4"/>
+  <text x="400" y="530" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#737373">Showcase image 02 · Replace with your work</text>
+</svg>

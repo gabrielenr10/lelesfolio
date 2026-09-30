@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#f5f5f5"/>
+  <rect x="90" y="96" width="620" height="366" rx="18" fill="#fff" stroke="#d4d4d4"/>
+  <path d="M90 144h620" stroke="#e5e5e5"/>
+  <g fill="#d4d4d4"><circle cx="114" cy="120" r="5"/><circle cx="132" cy="120" r="5"/><circle cx="150" cy="120" r="5"/></g>
+  <rect x="124" y="182" width="210" height="18" rx="9" fill="#a3a3a3"/>
+  <rect x="124" y="216" width="290" height="10" rx="5" fill="#e5e5e5"/>
+  <rect x="124" y="236" width="245" height="10" rx="5" fill="#e5e5e5"/>
+  <rect x="124" y="278" width="150" height="38" rx="19" fill="#262626"/>
+  <rect x="450" y="178" width="226" height="138" rx="12" fill="#f5f5f5"/>
+  <circle cx="563" cy="247" r="36" fill="#e5e5e5"/>
+  <g fill="#f5f5f5"><rect x="124" y="348" width="172" height="80" rx="12"/><rect x="314" y="348" width="172" height="80" rx="12"/><rect x="504" y="348" width="172" height="80" rx="12"/></g>
+  <text x="400" y="520" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#737373">Showcase image 01 · Replace with your work</text>
+</svg>
