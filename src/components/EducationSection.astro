@@ -1,0 +1,30 @@
+---
+import SectionHeading from '@components/SectionHeading.astro'
+import EducationItem from '@components/EducationItem.astro'
+import type { Education } from '../data/education'
+
+interface Props {
+  items: Education[]
+}
+
+const { items } = Astro.props
+---
+
+<section
+  id="education"
+  aria-labelledby="education-title"
+  class="scroll-mt-24 border-t border-neutral-100 bg-neutral-50/50"
+>
+  <div class="mx-auto max-w-4xl px-4 py-12 sm:py-16">
+    <SectionHeading
+      eyebrow="Background"
+      title="Education"
+      description="My academic foundation and training."
+    />
+    <ol>
+      {items.map((item) => (
+        <EducationItem item={item} />
+      ))}
+    </ol>
+  </div>
+</section>

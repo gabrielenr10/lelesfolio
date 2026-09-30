@@ -1,0 +1,31 @@
+---
+import type { SkillItem } from '../data/skills'
+
+interface Props {
+  area: string
+  items: SkillItem[]
+}
+
+const { area, items } = Astro.props
+---
+
+<div>
+  <h3 class="flex items-baseline gap-2 text-sm font-semibold uppercase tracking-widest text-neutral-500">
+    {area}
+    <span class="text-xs font-normal normal-case tracking-normal text-neutral-400">
+      {items.length}
+    </span>
+  </h3>
+  <ul class="mt-4 flex flex-wrap gap-3">
+    {items.map((skill) => (
+      <li class="flex min-w-28 flex-col items-center gap-1 rounded-xl border border-neutral-200 bg-white px-4 py-3 text-center shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md">
+        <span class="text-sm font-medium leading-tight text-neutral-800">
+          {skill.name}
+        </span>
+        {skill.detail && (
+          <span class="text-xs leading-tight text-neutral-500">{skill.detail}</span>
+        )}
+      </li>
+    ))}
+  </ul>
+</div>

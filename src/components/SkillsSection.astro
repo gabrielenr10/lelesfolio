@@ -1,0 +1,30 @@
+---
+import SectionHeading from '@components/SectionHeading.astro'
+import SkillGroupBlock from '@components/SkillGroup.astro'
+import type { SkillGroup } from '../data/skills'
+
+interface Props {
+  groups: SkillGroup[]
+}
+
+const { groups } = Astro.props
+---
+
+<section
+  id="skills"
+  aria-labelledby="skills-title"
+  class="scroll-mt-24 border-t border-neutral-100"
+>
+  <div class="mx-auto max-w-4xl px-4 py-12 sm:py-16">
+    <SectionHeading
+      eyebrow="Capabilities"
+      title="Skills"
+      description="Design expertise, collaboration, tools and languages."
+    />
+    <div class="space-y-10">
+      {groups.map((group) => (
+        <SkillGroupBlock area={group.area} items={group.items} />
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+---
+import SectionHeading from '@components/SectionHeading.astro'
+import ExperienceItem from '@components/ExperienceItem.astro'
+import type { Experience } from '../data/experience'
+
+interface Props {
+  items: Experience[]
+}
+
+const { items } = Astro.props
+---
+
+<section
+  id="experience"
+  aria-labelledby="experience-title"
+  class="scroll-mt-24 border-t border-neutral-100"
+>
+  <div class="mx-auto max-w-4xl px-4 py-12 sm:py-16">
+    <SectionHeading
+      eyebrow="Career"
+      title="Experience"
+      description="A timeline of my professional journey, roles, and milestones."
+    />
+    <ol>
+      {items.map((item) => (
+        <ExperienceItem item={item} />
+      ))}
+    </ol>
+  </div>
+</section>

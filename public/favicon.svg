@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <style>
+    text {
+      stroke-width: 2.5;
+      paint-order: stroke;
+      stroke-linejoin: round;
+    }
+    .fg { fill: #111111; stroke: #111111; }
+    .muted { fill: #737373; stroke: #737373; }
+    @media (prefers-color-scheme: dark) {
+      .fg { fill: #ffffff; stroke: #ffffff; }
+      .muted { fill: #a3a3a3; stroke: #a3a3a3; }
+    }
+  </style>
+  <text x="64" y="68" text-anchor="middle" dominant-baseline="central" font-family="ui-sans-serif, system-ui, -apple-system, Inter, 'SF Pro', Arial, sans-serif" font-size="52" font-weight="900" textLength="116" lengthAdjust="spacingAndGlyphs">
+    <tspan class="muted">&lt;</tspan><tspan class="fg">GI</tspan><tspan class="muted">/&gt;</tspan>
+  </text>
+</svg>

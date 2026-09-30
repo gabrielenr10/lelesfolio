@@ -1,0 +1,38 @@
+---
+interface Props {
+  class?: string
+}
+
+const { class: className = 'h-4 w-4 shrink-0' } = Astro.props
+---
+
+<svg
+  viewBox="0 0 24 24"
+  fill="none"
+  aria-hidden="true"
+  focusable="false"
+  class={className}
+>
+  <path
+    d="M11.76 0.00L22.20 5.76L22.20 18.12L11.76 23.76L1.44 18.12L1.44 5.76Z"
+    fill="url(#node-shade)"
+  />
+  <defs>
+    <linearGradient
+      id="node-shade"
+      x1="1.44"
+      x2="22.2"
+      y1="0"
+      y2="0"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0" stop-color="#3F8D3C" />
+      <stop offset="0.13" stop-color="#3F883E" />
+      <stop offset="0.22" stop-color="#67BA4A" />
+      <stop offset="0.35" stop-color="#61B348" />
+      <stop offset="0.5" stop-color="#58A646" />
+      <stop offset="0.7" stop-color="#4B9742" />
+      <stop offset="1" stop-color="#3F893E" />
+    </linearGradient>
+  </defs>
+</svg>

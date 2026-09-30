@@ -1,0 +1,70 @@
+---
+import { socials, type Social } from '../data/socials'
+import { navigation } from '../data/navigation'
+import AstroIcon from './icons/skills/AstroIcon.astro'
+import GitHubIcon from './icons/GitHubIcon.astro'
+import GmailIcon from './icons/GmailIcon.astro'
+import LinkedInIcon from './icons/LinkedInIcon.astro'
+
+const icons = {
+  GitHub: GitHubIcon,
+  LinkedIn: LinkedInIcon,
+  Email: GmailIcon,
+} as const
+
+type FooterSocialLabel = keyof typeof icons
+
+const footerSocials = socials.filter(
+  (social): social is Social & { label: FooterSocialLabel } =>
+    (Object.keys(icons) as string[]).includes(social.label),
+)
+---
+
+<footer class="border-t border-neutral-200 bg-neutral-50">
+  <div class="mx-auto flex max-w-4xl flex-col items-center gap-4 px-4 py-10 text-center sm:flex-row sm:justify-between sm:text-left">
+    <nav aria-label="Footer">
+      <ul class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 sm:justify-start">
+        {navigation.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="text-sm text-neutral-600 transition-colors hover:text-neutral-950"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+    <ul
+      aria-label="Social media"
+      class="flex flex-wrap items-center justify-center gap-3"
+    >
+      {footerSocials.map((social) => {
+        const Icon = icons[social.label]
+        const isExternal = social.href.startsWith('http')
+
+        return (
+          <li>
+            <a
+              href={social.href}
+              target={isExternal ? '_blank' : undefined}
+              rel={isExternal ? 'me noopener' : undefined}
+              aria-label={social.label}
+              class="flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-300 text-neutral-700 transition-colors hover:bg-neutral-100"
+            >
+              <Icon class="h-5 w-5" />
+            </a>
+          </li>
+        )
+      })}
+    </ul>
+  </div>
+  <p class="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 px-4 pb-6 text-center text-xs text-neutral-500">
+    <span>© {new Date().getFullYear()} Ángeles Bocharán</span>
+    <span aria-hidden="true">·</span>
+    <a href="#home" class="transition-colors hover:text-neutral-950">
+      Back to top ↑
+    </a>
+  </p>
+</footer>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-label="Empty avatar placeholder">
+  <rect width="320" height="320" rx="160" fill="#f5f5f5" />
+  <circle cx="160" cy="128" r="56" fill="#d4d4d4" />
+  <path
+    d="M72 272c8-52 46-80 88-80s80 28 88 80c-27 22-56 32-88 32s-61-10-88-32Z"
+    fill="#d4d4d4"
+  />
+  <circle cx="160" cy="160" r="152" fill="none" stroke="#e5e5e5" stroke-width="8" />
+</svg>
