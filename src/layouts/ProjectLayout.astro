@@ -43,7 +43,7 @@ const { project } = Astro.props
               Dates
             </dt>
             <dd class="mt-2 text-sm text-neutral-900 sm:text-base">
-              {project.date ?? 'Dates to be added.'}
+              {project.date || 'Dates to be added.'}
             </dd>
           </div>
           <div>
