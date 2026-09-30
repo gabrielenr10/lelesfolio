@@ -71,7 +71,7 @@ export const projects: Project[] = [
   {
     id: 'mutuamas',
     title: 'MutuaMás · Insurance and mobility in one experience',
-    role: 'Lead Product Designer · Product design leadership and supervision of teams of one or two designers.',
+    role: 'Lead Product Designer · Product design leadership and supervision of 2+ people teams.',
     description:
       'Since 2022, I have led the design of multiple products within MutuaMás, Mutua Madrileña’s app for insurance services and mobility solutions. I have worked as Lead Designer on projects including the integration of Voltio and Taxi/Cabify, coordinating teams of one or two designers on each initiative. My work covers experience definition, user flows, prototypes and interface design, as well as overseeing the design process to integrate services from different companies into a coherent and easy-to-use app experience.',
     images: [
@@ -111,7 +111,7 @@ export const projects: Project[] = [
     title: 'UEFA Euro 2020 · A TV experience that evolved with the tournament',
     role: 'UX/UI Designer · Sole designer responsible for the complete TV application.',
     description:
-      'I designed an end-to-end application for digital terrestrial television dedicated to UEFA Euro 2020, which was held in 2021. The product featured multiple sections and evolved as the competition progressed, adapting its content and user journeys to the group stage, knockout rounds and final. I completed the entire UX and UI process independently, from information architecture and content organisation to the visual design of the TV screens.',
+      'I designed an end-to-end application for digital terrestrial television dedicated to UEFA Euro 2020, which was held in 2021. The product featured multiple sections and evolved as the competition progressed, adapting its content and user journeys to the group stage, knockout rounds and final. I completed the entire UX and UI process ent-to-end, from information architecture and content organisation to the visual design of the TV screens.',
     images: [
       {
         src: eurocopa01,

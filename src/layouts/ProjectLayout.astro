@@ -8,12 +8,6 @@ interface Props {
 }
 
 const { project } = Astro.props
-const formatDate = (date: string) =>
-  new Intl.DateTimeFormat('en', {
-    month: 'long',
-    year: 'numeric',
-    timeZone: 'UTC',
-  }).format(new Date(`${date}-01T00:00:00Z`))
 ---
 
 <BaseLayout
@@ -49,23 +43,7 @@ const formatDate = (date: string) =>
               Dates
             </dt>
             <dd class="mt-2 text-sm text-neutral-900 sm:text-base">
-              {project.startDate ? (
-                <>
-                  <time datetime={project.startDate}>
-                    {formatDate(project.startDate)}
-                  </time>
-                  <span> — </span>
-                  {project.endDate ? (
-                    <time datetime={project.endDate}>
-                      {formatDate(project.endDate)}
-                    </time>
-                  ) : (
-                    <span>Present</span>
-                  )}
-                </>
-              ) : (
-                <span>Dates to be added.</span>
-              )}
+              {project.date ?? 'Dates to be added.'}
             </dd>
           </div>
           <div>
@@ -84,7 +62,7 @@ const formatDate = (date: string) =>
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Visit ${project.title} website (opens in a new tab)`}
-            class="mt-8 inline-flex items-center gap-2 rounded-full border border-neutral-300 px-6 py-2.5 text-sm font-medium text-neutral-900 transition-colors hover:border-neutral-900 hover:bg-neutral-100"
+            class="mt-8 inline-flex items-center gap-2 rounded-full bg-violet-700 px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-violet-800"
           >
             Visit website <span aria-hidden="true">↗</span>
           </a>
