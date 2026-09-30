@@ -16,7 +16,7 @@ const isProject = Astro.url.pathname.startsWith('/projects/')
   >
     <ul class="flex w-full flex-1 items-center justify-center gap-1 md:gap-2">
       {navigation.map((link) => (
-        <li class="flex-1 text-center md:w-28 md:flex-none">
+        <li class:list={['flex-1 text-center md:w-28 md:flex-none', { 'max-[375px]:hidden': link.href === '#skills' }]}>
           <a
             href={isHome ? link.href : `/${link.href}`}
             aria-current={

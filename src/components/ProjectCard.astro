@@ -24,7 +24,7 @@ const { project } = Astro.props
       href={`/projects/${project.id}`}
       aria-label={`View details for ${project.title}`}
       title="View project details"
-      class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-neutral-300 text-neutral-700 transition-colors hover:border-neutral-900 hover:bg-neutral-100"
+      class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-violet-300 text-violet-700 transition-colors hover:border-violet-700 hover:bg-violet-50"
     >
       <svg
         aria-hidden="true"
@@ -41,6 +41,9 @@ const { project } = Astro.props
       </svg>
     </a>
   </div>
+  {project.date && (
+    <p class="mt-2 text-sm font-medium text-neutral-500">{project.date}</p>
+  )}
   <p class="mt-3 max-w-prose text-sm leading-relaxed text-neutral-600 sm:text-base">
     {project.description}
   </p>
