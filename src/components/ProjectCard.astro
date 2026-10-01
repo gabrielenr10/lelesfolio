@@ -52,13 +52,14 @@ const { project } = Astro.props
       <Image
         src={image.src}
         alt={image.alt}
-        width={800}
+        width="400"
+        height="220"
         widths={[400, 800]}
         sizes="(min-width: 640px) 400px, calc(100vw - 74px)"
         format="webp"
         loading="lazy"
         decoding="async"
-        class="aspect-4/3 w-full rounded-2xl border border-neutral-200 bg-neutral-100 object-contain"
+        class="rounded-2xl border border-neutral-200 bg-neutral-100"
       />
     ))}
   </div>
